@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  back:
+    build: ./back-end
+    image: back
+    ports:
+      - "5252:5252"
+
+  front:
+    build: ./front-end
+    image: front
+    ports:
+      - "9000:9000"
+    depends_on:
+      - back
